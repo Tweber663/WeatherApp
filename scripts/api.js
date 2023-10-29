@@ -3,7 +3,7 @@ const API = `DauCpmlsNea6EeyUwcSCe80QmAgmcpkC`;
 
 const foreCastAPI = async(cityKey) => {
 
-  const URL = `http://dataservice.accuweather.com/forecasts/v1/daily/5day/${cityKey}?apikey=${API}&details=true&metric=true`;
+  const URL = `https://dataservice.accuweather.com/forecasts/v1/daily/5day/${cityKey}?apikey=${API}&details=true&metric=true`;
   
   const resolve = await fetch(URL);
   const JSON_data = await resolve.json();
@@ -14,7 +14,7 @@ const foreCastAPI = async(cityKey) => {
 
 const weatherAPI = async(cityKey) => {
 
-  const URL = `http://dataservice.accuweather.com/currentconditions/v1/${cityKey}?apikey=${API}`;
+  const URL = `https://dataservice.accuweather.com/currentconditions/v1/${cityKey}?apikey=${API}`;
   
   const resolve = await fetch(URL);
   const JSON_data = await resolve.json();
@@ -24,7 +24,7 @@ const weatherAPI = async(cityKey) => {
 
 const cityAPI = async(cityName) => {
 
-   const URL = `http://dataservice.accuweather.com/locations/v1/cities/search?apikey=${API}&q=${cityName}`; 
+   const URL = `https://dataservice.accuweather.com/locations/v1/cities/search?apikey=${API}&q=${cityName}`; 
 
    const resolve = await fetch(URL);
    const JSON_data = await resolve.json();
@@ -32,8 +32,6 @@ const cityAPI = async(cityName) => {
    return JSON_data[0];
 
 }
-
-
 
 
 
